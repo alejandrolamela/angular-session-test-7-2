@@ -1,1 +1,9 @@
-<p>comics-detail works!</p>
+<!-- 
+Este div sirve para pintar el comic cuando clicko en view more, pongo el ngIf
+porque me daba algun error en la consola, y la variable comic es como la llame en 
+comic detail component.ts -->
+<div class="comic-block" *ngIf="comic">
+    <h4>{{comic.title}}</h4>
+    <img src="{{comic.image}}" alt="{{comic.title}}">
+    <p>{{comic.author}}</p>
+</div>
