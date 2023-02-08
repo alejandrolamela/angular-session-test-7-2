@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class AddComicComponent implements OnInit{
 
   comicForm!: FormGroup;
+  comic!: IComics;
 
   constructor(private form: FormBuilder, private api: ApiService, private route: Router){}
 
@@ -23,6 +24,11 @@ export class AddComicComponent implements OnInit{
       author: ["", [Validators.required]],
       company: ["", [Validators.required]],
       
+    })
+// Este codigo es para cuando vamos rellenando el formulario se ira escribiendo en la parte de abajo
+// asi podemos ver los cambios en tiempo real
+    this.comicForm.valueChanges.subscribe((data)=> {
+      this.comic = data;
     })
   }
 
