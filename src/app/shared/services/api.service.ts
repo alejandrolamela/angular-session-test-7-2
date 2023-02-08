@@ -1,3 +1,4 @@
+import { IComics } from './../../models/icomics';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -17,5 +18,9 @@ export class ApiService {
 
     return this.http.get(`http://localhost:3000/comics/${id}`);
 
+  }
+
+  postComic(comic: IComics){
+    return this.http.post(`http://localhost:3000/comics/`,comic);
   }
 }

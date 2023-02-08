@@ -1,1 +1,12 @@
-<p>add-comic works!</p>
+<!-- Aqui es donde dibujamos nuestro formulario, siempre sera con form y dentro del 
+form añadimos formgroup y en tre comillas ponemos nuestra variable que 
+asignamos en add comic ts y ponemos tantos imputs como hayamos declarado 
+en add comic ts y por cada input simepre ponemos form control name con el
+valor correspondiente -->
+
+<form [formGroup]="comicForm" (ngSubmit)="addComic()">
+    <input type="text" placeholder="title" formControlName="title">
+    <input type="text" placeholder="author" formControlName="author">
+    <input type="text" placeholder="company" formControlName="company">
+    <button>Agregar</button>
+</form>
