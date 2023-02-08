@@ -13,6 +13,7 @@ export class AddComicComponent implements OnInit{
 
   comicForm!: FormGroup;
   comic!: IComics;
+  submitted: boolean = false;
 
   constructor(private form: FormBuilder, private api: ApiService, private route: Router){}
 
@@ -33,11 +34,13 @@ export class AddComicComponent implements OnInit{
   }
 
   addComic(){
+    this.submitted = true;
     if(this.comicForm.valid){
       let newComic: IComics = this.comicForm.value;
       this.api.postComic(newComic).subscribe((response)=> {
         console.log(response);
         this.comicForm.reset();
+        this.submitted = false;
         this.route.navigate(["/comics"])
       })
     }

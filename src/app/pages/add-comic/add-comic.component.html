@@ -4,10 +4,14 @@ asignamos en add comic ts y ponemos tantos imputs como hayamos declarado
 en add comic ts y por cada input simepre ponemos form control name con el
 valor correspondiente -->
 
+<!-- Los div de campo requerido es para control de errores, y evitar que envie el usuario un formulario en blanco -->
 <form [formGroup]="comicForm" (ngSubmit)="addComic()">
     <input type="text" placeholder="title" formControlName="title">
+    <div *ngIf="(!comicForm.get('title')?.valid && submitted)" >Este campo es requerido</div>
     <input type="text" placeholder="author" formControlName="author">
+    <div *ngIf="(!comicForm.get('author')?.valid && submitted)" >Este campo es requerido</div>
     <input type="text" placeholder="company" formControlName="company">
+    <div *ngIf="(!comicForm.get('company')?.valid && submitted)" >Este campo es requerido</div>
     <button>Agregar</button>
 </form>
 
