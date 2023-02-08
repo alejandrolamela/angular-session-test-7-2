@@ -1,7 +1,7 @@
 import { IComics } from './../../models/icomics';
 import { ApiService } from './../../shared/services/api.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-comics-detail',
@@ -14,7 +14,7 @@ export class ComicsDetailComponent implements OnInit{
 // Como queremso recoger la funcion getcomic by id y esta en nuestro services
 // en el constructor la traemos con apiservice y activated route es para recoger 
 // los parametros de la ruta comic id 
-  constructor(private api: ApiService, private activatedRoute: ActivatedRoute){
+  constructor(private api: ApiService, private activatedRoute: ActivatedRoute, private router: Router){
 
   }
 
@@ -31,5 +31,11 @@ export class ComicsDetailComponent implements OnInit{
 
     })
   }
+
+  editComic(){
+    this.api.setComic(this.comic, this.id);
+    this.router.navigate(['edit']);
+  }
+
 
 }

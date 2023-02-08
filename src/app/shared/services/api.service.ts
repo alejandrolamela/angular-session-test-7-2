@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
-
+// Estas dos variables las uso para editar el comic
+  comic!: IComics;
+  id!: number;
   constructor(private http: HttpClient) { }
 
   getComics(){
@@ -22,5 +24,16 @@ export class ApiService {
 
   postComic(comic: IComics){
     return this.http.post(`http://localhost:3000/comics/`,comic);
+  }
+// Esta funcion es para editar mi comic
+  setComic(comic: IComics, id:number){
+    this.comic = comic,
+    this.id = id
+  }
+
+  putComic(comic: IComics){
+
+    return this.http.put(`http://localhost:3000/comics/${comic.id}`,comic)
+
   }
 }

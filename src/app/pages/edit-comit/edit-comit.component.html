@@ -1,0 +1,15 @@
+<form [formGroup]="editForm" (ngSubmit)="editComic()">
+    <input type="text" placeholder="title" formControlName="title">
+    <div *ngIf="(!editForm.get('title')?.valid && submitted)" >Este campo es requerido</div>
+    <input type="text" placeholder="author" formControlName="author">
+    <div *ngIf="(!editForm.get('author')?.valid && submitted)" >Este campo es requerido</div>
+    <input type="text" placeholder="company" formControlName="company">
+    <div *ngIf="(!editForm.get('company')?.valid && submitted)" >Este campo es requerido</div>
+    <button>Actualizar</button>
+</form>
+
+<div class="comicContainer">
+    <p>{{comic.title}}</p>
+    <p>{{comic.author}}</p>
+    <p>{{comic.company}}</p>
+</div>

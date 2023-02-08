@@ -1,3 +1,4 @@
+import { EditComitComponent } from './pages/edit-comit/edit-comit.component';
 import { AddComicComponent } from './pages/add-comic/add-comic.component';
 import { ComicsDetailComponent } from './pages/comics-detail/comics-detail.component';
 import { ComicsComponent } from './pages/comics/comics.component';
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path:'add',component: AddComicComponent
+  },
+  {
+    path:'edit',component: EditComitComponent
   },
 ];
 

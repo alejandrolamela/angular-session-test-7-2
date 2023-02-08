@@ -10,6 +10,7 @@ import { AddComicComponent } from './pages/add-comic/add-comic.component';
 import { NavigatorComponent } from './shared/components/navigator/navigator.component';
 import { ComicsDetailComponent } from './pages/comics-detail/comics-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditComitComponent } from './pages/edit-comit/edit-comit.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
     NavigatorComponent,
     ComicsDetailComponent,
+    EditComitComponent,
     
   ],
   imports: [
