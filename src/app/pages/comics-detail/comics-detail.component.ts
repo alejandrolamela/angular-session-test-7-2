@@ -37,5 +37,14 @@ export class ComicsDetailComponent implements OnInit{
     this.router.navigate(['edit']);
   }
 
+  deleteComic(){
+    this.api.deleteComic(this.id).subscribe((data)=>{
+      console.log(data);
+        this.router.navigate(['comics']);
+    });
+  
+  }
+
 
 }
+

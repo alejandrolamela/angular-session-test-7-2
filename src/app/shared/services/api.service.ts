@@ -36,4 +36,9 @@ export class ApiService {
     return this.http.put(`http://localhost:3000/comics/${comic.id}`,comic)
 
   }
+
+  deleteComic(id: number){
+    return this.http.delete(`http://localhost:3000/comics/${id}`)
+
+  }
 }
